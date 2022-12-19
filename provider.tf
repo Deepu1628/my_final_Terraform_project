@@ -7,7 +7,14 @@ terraform {
   }
 
 
+  backend "azurerm" {
+    resource_group_name  = "terraform_tf_fileDeepa-rg"
+    storage_account_name = "projecttfstate112807"
+    container_name       = "projectcontainerdeepatfstate"
+    key                  = "terraform.tfstate"
+  }
 }
+
 
 
 provider "azurerm" {
