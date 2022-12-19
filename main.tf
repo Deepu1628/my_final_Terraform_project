@@ -161,7 +161,7 @@ resource "azurerm_container_registry" "final_project_rg" {
   location            = azurerm_resource_group.final_project_techstarter.location
   sku                 = "Premium"
   admin_enabled       = false
-  depends_on          =  [azurerm_resource_group.final_project_techstarter]
+  depends_on          = [azurerm_resource_group.final_project_techstarter]
 
 
 }
