@@ -160,7 +160,9 @@ resource "azurerm_container_registry" "final_project_rg" {
   resource_group_name = azurerm_resource_group.final_project_techstarter.name
   location            = azurerm_resource_group.final_project_techstarter.location
   sku                 = "Premium"
-  admin_enabled       = true
+  admin_enabled       = false
+  depends_on          =  [azurerm_resource_group.final_project_techstarter]
+
 
 }
 resource "azurerm_container_registry_scope_map" "scope_map" {
