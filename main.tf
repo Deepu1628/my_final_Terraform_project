@@ -175,3 +175,9 @@ resource "azurerm_container_registry_scope_map" "scope_map" {
   ]
 }
 
+resource "azurerm_container_registry_token" "registry_token" {
+  name                    = "tokentoken"
+  container_registry_name = azurerm_container_registry.final_project_rg.name
+  resource_group_name     = azurerm_resource_group.final_project_techstarter.name
+  scope_map_id            = azurerm_container_registry_scope_map.scope_map.id
+}
